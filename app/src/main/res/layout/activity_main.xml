@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <Button
+        android:id="@+id/bt_sp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="SharedPreferences存储数据"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        />
+    <Button
+        android:id="@+id/bt_file"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="文件存储（内部、外部）"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        />
+    <Button
+        android:id="@+id/bt_sqlit"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Sqlit数据库存储"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        />
+    <Button
+        android:id="@+id/bt_contentprovider"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="ContentProvider存储数据"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        />
+    <Button
+        android:id="@+id/bt_net"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="网络存储数据"
+        android:layout_margin="10dp"
+        android:gravity="center_vertical"
+        />
+
+</LinearLayout>
