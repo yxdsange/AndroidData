@@ -19,7 +19,7 @@
         android:id="@+id/bt_file"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="文件存储（内部、外部）"
+        android:text="文件存储（外部）"
         android:layout_margin="10dp"
         android:gravity="center_vertical"
         />

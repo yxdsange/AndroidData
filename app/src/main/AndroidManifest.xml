@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.it.androiddata">
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
     <application
+        android:requestLegacyExternalStorage="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SharedPreferencesActivity"></activity>
+        <activity android:name=".FileActivity"></activity>
+        <activity android:name=".SharedPreferencesActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,4 +22,19 @@
         </activity>
     </application>
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+————————————————
+版权声明：本文为CSDN博主「星河Dac」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/c529283955/article/details/104266083
+    //READ可以不添加。因为在8.0以前，申请WRITE会自动获取 一组 相关的权限，其中就包括READ权限，因此仅申请WRITE权限也能用
+     -->
+
 </manifest>
+
+
+

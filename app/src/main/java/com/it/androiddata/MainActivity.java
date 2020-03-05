@@ -42,6 +42,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.bt_file:
+                startActivity(new Intent(MainActivity.this,FileActivity.class));
                 break;
 
             case R.id.bt_contentprovider:
