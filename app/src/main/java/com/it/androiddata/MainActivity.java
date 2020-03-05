@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.bt_contentprovider:
+                startActivity(new Intent(MainActivity.this,InternalActivity.class));
                 break;
 
             case R.id.bt_sqlit:

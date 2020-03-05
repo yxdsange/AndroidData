@@ -6,6 +6,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.nfc.Tag;
 import android.os.Bundle;
@@ -14,15 +15,21 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class FileActivity extends AppCompatActivity implements View.OnClickListener {
     private EditText edtInput;
     private Button btnSave, btnRead;
+    private TextView tv_show;
 
 
 
@@ -32,18 +39,43 @@ public class FileActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_file);
         initUI();
         initOnClicklistener();
+//        进入页面第一时间申请权限；
+//        int permisson=ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
+//        if (permisson != PackageManager.PERMISSION_DENIED){
+////            动态申请权限
+//            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},1 );
+//        }
+    }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case 1:
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED){
+                    //权限已成功申请
+                }else{
+                    //用户拒绝授权
+//                    Toast.makeText(this, "无法获取SD卡读写权限", Toast.LENGTH_SHORT).show();
+//                    finish();
+                    break;
+                }
+                break;
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
     }
 
     private void initOnClicklistener() {
         btnSave.setOnClickListener(this);
         btnRead.setOnClickListener(this);
+
     }
 
     private void initUI() {
         edtInput=findViewById(R.id.edt_input);
         btnSave = findViewById(R.id.btn_save);
         btnRead = findViewById(R.id.btn_read);
+        tv_show=findViewById(R.id.tv_show);
     }
 
     @Override
@@ -82,32 +114,20 @@ public class FileActivity extends AppCompatActivity implements View.OnClickListe
 
                 break;
             case R.id.btn_read:
-                break;
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case 1:
-                if (grantResults.length>0 && grantResults[0]== PackageManager.PERMISSION_DENIED){
-//                    权限申请成功
-                }else {
-//                    用户拒绝权限
-//                    Toast.makeText(this,"无法获取SD卡读写权限",Toast.LENGTH_LONG).show();
-//                    finish();
-                    break;
+                try {
+                    FileInputStream fis=new FileInputStream(path);
+                    byte[] b=new byte[1024];
+                        int len=fis.read(b);
+                        String str2=new String(b,0,len);
+                    tv_show.setText(str2);
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }catch (IOException e) {
+                    e.printStackTrace();
                 }
-
                 break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
-
-
-
-
 
 
 

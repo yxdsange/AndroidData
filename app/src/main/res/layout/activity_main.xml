@@ -35,7 +35,7 @@
         android:id="@+id/bt_contentprovider"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="ContentProvider存储数据"
+        android:text=" Internal 缓存存储 存储数据"
         android:layout_margin="10dp"
         android:gravity="center_vertical"
 
