@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.bt_sqlit:
+                startActivity(new Intent(MainActivity.this,SqliteActivity.class));
                 break;
 
             case R.id.bt_net:

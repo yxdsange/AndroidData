@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".SqliteExpterActivity">
+
+    <EditText
+        android:id="@+id/edt_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="姓名"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textSize="24dp"
+        />
+
+    <EditText
+        android:id="@+id/edt_age"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="年龄"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textSize="24dp"
+        android:numeric="integer"
+        />
+    <RadioGroup
+        android:id="@+id/genderGp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="24dp"
+            />
+        <RadioButton
+            android:id="@+id/rg_man"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:checked="true"
+            android:textSize="24dp"
+            />
+
+        <RadioButton
+            android:id="@+id/rg_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="24dp"
+            />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edt_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="编号"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:textSize="24dp"
+        />
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="添加"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="24dp"
+            />
+        <Button
+            android:id="@+id/btn_check"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="查询"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="24dp"
+            />
+        <Button
+            android:id="@+id/btn_del"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="删除"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="24dp"
+            />
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="修改"
+            android:layout_margin="10dp"
+            android:padding="10dp"
+            android:textSize="24dp"
+            />
+    </LinearLayout>
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/stu_list"
+        >
+
+
+
+    </ListView>
+
+</LinearLayout>
